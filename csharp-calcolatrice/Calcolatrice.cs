@@ -52,5 +52,26 @@ namespace csharp_calcolatrice
             if (numero1 < numero2) return numero2;
             return numero1;
         }
+
+        public static int ElevatoPotenza(int baseNumero, int esponenteNumero)
+        {
+            if ((baseNumero == 0 && esponenteNumero == 0) || esponenteNumero == 0)
+                return 1;
+
+            if (esponenteNumero < 0)
+            {
+                int resultAssoluto = ValoreAssoluto(esponenteNumero);
+                return ElevatoPotenza(baseNumero, resultAssoluto);
+            }
+
+            int result = 1;
+            for (int i = 0; i < esponenteNumero; i++)
+            {
+                result *= baseNumero;
+            }
+            return result;
+        }
     }
 }
+// uno dei principi di programmazione ad oggetti che abbiamo visto oggi…Quale? 
+// Il principio di Polimorfismo , dove possiamo chiamare un metodo con lo stesso nome , ma con argomenti diversi.
