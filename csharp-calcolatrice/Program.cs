@@ -15,7 +15,7 @@
             Console.WriteLine($"Il numero più piccolo è {Calcolatrice.MinimoNumeri(15.55, 0.15)}");
             Console.WriteLine($"Il numero più grande è {Calcolatrice.MassimoNumeri(21, 32)}");
             Console.WriteLine($"Il numero più grande è {Calcolatrice.MassimoNumeri(15.55, 0.15)}");
-            Console.WriteLine($"la potenza è {Calcolatrice.ElevatoPotenza(2, -5)}");
+            Console.WriteLine($"la potenza è {Calcolatrice.ElevatoPotenza(100, -2)}");
         }
     }
 }
