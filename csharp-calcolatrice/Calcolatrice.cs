@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace csharp_calcolatrice
 {
-    public static class Calcolatrice
+   /* public static class Calcolatrice
     {
         public static int Somma(int numero1, int numero2) { return numero1 + numero2; }
 
@@ -71,6 +72,50 @@ namespace csharp_calcolatrice
             }
             return result;
         }
+    } */
+
+    // Metodi con i Generici
+
+    public static class Calcolatrice
+    {
+        public static T Somma<T>(T numero1, T numero2) where T : INumber<T>  { return numero1 + numero2; }
+        public static T Differenza<T>(T numero1, T numero2) where T : INumber<T> { return numero1 - numero2; }
+        /* public static T ValoreAssoluto<T>(T numero1) where T : INumber<T>
+        {
+            if (numero1 < 0) return numero1 * -1;
+            return numero1;
+        } */
+        public static T MinimoNumeri<T>(T numero1, T numero2) where T : INumber<T>
+        {
+            if (numero1 > numero2) return numero2;
+            if (numero1 < numero2) return numero1;
+            return numero1;
+        }
+        public static T MassimoNumeri<T>(T numero1, T numero2) where T : INumber<T>
+        {
+            if (numero1 > numero2) return numero1;
+            if (numero1 < numero2) return numero2;
+            return numero1;
+        }
+      /*  public static T ElevatoPotenza<T>(T baseNumero, T esponenteNumero) where T : INumber<T>
+        {
+            if ((baseNumero == 0 && esponenteNumero == 0) || esponenteNumero == 0)
+                return 1;
+
+            if (esponenteNumero < 0)
+            {
+                int resultAssoluto = ValoreAssoluto(esponenteNumero);
+                return ElevatoPotenza(baseNumero, resultAssoluto);
+            }
+
+            int result = 1;
+            for (int i = 0; i < esponenteNumero; i++)
+            {
+                result *= baseNumero;
+            }
+            return result;
+        } */
+  
     }
 }
 // uno dei principi di programmazione ad oggetti che abbiamo visto oggi…Quale? 
